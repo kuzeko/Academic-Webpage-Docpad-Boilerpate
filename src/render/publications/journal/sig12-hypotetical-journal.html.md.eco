@@ -1,0 +1,37 @@
+---
+title: 'An hypotetical journal with very long title and also very long publication'
+layout: 'article'
+name: 'sig12-hypotetical-journal'
+
+headerTitle: 'An hypotetical [...] publication'
+menuTitle: 'Hypotetical journal (2012)'
+
+pageType: 'secondary'
+public: true
+
+inSection: 'publications'
+hasPage: false
+date: 2012-12-01
+venue: 'ACM SIG* 43(4), 2012'
+authors: 'Author One, Second Author, Author T. Hird'
+file: ''
+---
+
+
+# <%- @document.title %>
+## <%- @document.authors %>
+
+### Abstract :
+
+<section class="intro">
+    <p class="subhead">
+    Information graphs are generic graphs that model different types of information through nodes and edges.
+    Knowledge graphs are the most common type of information graphs in which nodes represent entities and edges represent relationships among them.
+    </p>
+    <p class="subhead">
+    In this paper, we argue that exploitation of information graphs can lead into novel query answering capabilities that go beyond the existing capabilities of keyword search, and focus on one of them, namely, exemplar queries.
+    Exemplar queries is a recently introduced paradigm that treats a user query as an example from the desired result set.
+    In this paper, we describe the foundations of exemplar queries and the significant role of information graphs, and we present several applications and relevant research directions.
+    </p>
+</section>
+

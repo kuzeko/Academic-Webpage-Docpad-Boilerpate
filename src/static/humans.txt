@@ -1,0 +1,25 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    <name> -- <role> -- <twitter>
+    Matteo Lissandrini -- Main Dev. -- @Kuzeko
+
+# THANKS TO
+
+    The Docpad Team https://docpad.org/
+
+
+# TECHNOLOGY COLOPHON
+
+    HTML(5), CSS(3)
+    SASS
+    jQuery, Modernizr
+    moment.js
+    Docpad, Grunt
+
+    normalize.css, 
+    HTML5 Boilerplate
+    responsablecss.com
+    Google Web Fonts

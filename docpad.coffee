@@ -12,7 +12,9 @@ docpadConfig = {
 		# Specify some site properties
 		site:
 			# The production url of our website
-			url: "http://website.com"
+			owner: "Lello M. Mascetti"
+			url: "http://ar.go:8080"
+			email: 'me@email.it'
 
 			# Here are some old site urls that you would like to redirect from
 			oldUrls: [
@@ -61,24 +63,108 @@ docpadConfig = {
 		getGruntedStyles: ->
 			_ = require 'underscore'
 			styles = []
+			siteUrl = @site.url
 			gruntConfig = require('./grunt-config.json')
 			_.each gruntConfig, (value, key) ->
 				styles = styles.concat _.flatten _.pluck value, 'dest'
 			styles = _.filter styles, (value) ->
 				return value.indexOf('.min.css') > -1
 			_.map styles, (value) ->
-				return value.replace 'out', ''
+				#return value.replace 'out', ''
+				return value.replace 'out', siteUrl
+
 
 		getGruntedScripts: ->
 			_ = require 'underscore'
 			scripts = []
+			siteUrl = @site.url
 			gruntConfig = require('./grunt-config.json')
 			_.each gruntConfig, (value, key) ->
 				scripts = scripts.concat _.flatten _.pluck value, 'dest'
 			scripts = _.filter scripts, (value) ->
 				return value.indexOf('.min.js') > -1
 			_.map scripts, (value) ->
-				return value.replace 'out', ''
+				return value.replace 'out', siteUrl
+
+	# =================================
+	# Configure Plugins
+	# Should contain the plugin short names on the left,
+	# and the configuration to pass the plugin on the right
+	plugins:
+		marked:
+			gfm: true
+
+		livereload:
+			enabled: true
+
+		sass:
+			# enable compass-colors
+			# requireLibraries: ['compass-colors']
+			# set correct path for the scss
+			scssPath: '/usr/bin/scss'
+			compass: 'true'
+
+		moment:
+			formats: [
+				{raw: 'date', format: 'MMMM Do YYYY', formatted: 'humanDate'}
+				{raw: 'date', format: 'YYYY-MM-DD', formatted: 'computerDate'}
+			]
+
+	# =================================
+	# Server Configuration
+
+	# Port
+	# Use to change the port that DocPad listens to
+	port: 8080
+
+	# =================================
+	# Special Custom collections of pages
+	collections:
+		# Static pages : those for the main menu
+		sections: -> @getCollection("html").findAllLive({public: true, relativeOutDirPath: 'sections'}, [orderValue: 1])
+
+		#Blog posts
+		posts: -> @getCollection("html").findAllLive({public:true, relativeOutDirPath: 'posts'}, [date: -1])
+
+		# Publications : those in the publications dir
+		book: -> @getCollection("html").findAllLive({public:true, relativeOutDirPath: 'publications/book'}, [date: -1])
+		journal: -> @getCollection("html").findAllLive({public:true, relativeOutDirPath: 'publications/journal'}, [date: -1])
+		conference: -> @getCollection("html").findAllLive({public:true, relativeOutDirPath: 'publications/conf'}, [date: -1])
+		demo: -> @getCollection("html").findAllLive({public:true, relativeOutDirPath: 'publications/demo'}, [date: -1])
+
+
+	# =================================
+	# Environment Configuration
+
+	# Locale Code
+	# The code we shall use for our locale (e.g. `en`, `fr`, etc)
+	# If not set, we will attempt to detect the system's locale, if the locale can't be detected or if our locale file is not found for it, we will revert to `en`
+	localeCode: 'en'  # default
+
+	# Environment
+	# Which environment we should load up
+	# If not set, we will default the `NODE_ENV` environment variable, if that isn't set, we will default to `development`
+	#env: development  # default
+
+	# Environments
+	# Allows us to set custom configuration for specific environments
+	environments:  # default
+		development:  # default
+			plugins:
+				livereload:
+					enabled: true
+
+			# Always refresh from server
+			maxAge: false  # default
+			templateData:
+				site:
+					url: 'http://ar.go:8080'
+		deploy: # change the name here if you have other environments
+			maxAge: true
+			plugins:
+				livereload:
+					enabled: false
+
 
 
 	# =================================
@@ -120,7 +206,7 @@ docpadConfig = {
 
 			# Make sure to register a grunt `default` task
 			command = ["#{rootPath}/node_modules/.bin/grunt", 'default']
-			
+
 			# Execute
 			balUtil.spawn command, {cwd:rootPath,output:true}, ->
 				src = []

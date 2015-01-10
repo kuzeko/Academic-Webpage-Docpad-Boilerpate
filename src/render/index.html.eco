@@ -1,0 +1,64 @@
+---
+title: 'The Home Page Title'
+layout: 'default'
+name: 'home'
+
+headerTitle : 'Bio &amp; Research Topics'
+menuTitle: 'Home'
+
+pageType : 'homepage'
+public: true
+orderValue : 1
+---
+
+<section class="main-container">
+
+    <article class="container main-content" role="main">
+        <section id="bio" class="primary-content">
+            <h1>Bio:</h1>
+
+            <section class="intro">
+                <p class="subhead">
+                PhD student from <a href="http://www.unitn.it/">the University of Trento</a> (Italy), and member of the <a href="http://db.disi.unitn.eu/">DbTrento research group</a>.
+                </p>
+            </section>
+
+            <p>
+            He has also been teacher assistant in the <strong>Database Management System</strong> course at the University of Trento.
+            </p>
+
+            <p>
+            He received his <abbr title="[EN] Master of Science – [IT] Laurea Magistrale">Msc</abbr> in Computer Science at the University of Trento in 2012.
+            </p>
+        </section>
+
+        <section id="topics" class="primary-content">
+            <h1>Research Topics:</h1>
+
+            <section class="intro">
+                <p class="subhead">
+                He is currently researching on advanced technologies for knowledge discovery on the web,  sentiment analysis and opinion summarization.
+                </p>
+            </section>
+
+            <p>
+            His research interests include also data mining, especially on knowledge graphs, analysis of user generated content from the social media, and advanced models for event detection and profiling.
+            </p>
+        </section>
+
+        <section id="others" class="primary-content">
+            <h1>Experiences and Collaborations:</h1>
+
+            <section class="intro">
+                <p class="subhead">
+                He as also served as external reviewer for many  important conferences in the fields of database technologies, data  management, data mining, and information retrieval.
+                </p>
+            </section>
+
+            <p>
+              Among those: <a href="http://www.wsdm2013.org/">WSDM'13</a>, <a href="http://www2013.wwwconference.org/proceedings/organization.pdf">WWW'13</a> AND <a href="http://wwwconference.org/proceedings/www2014/proceedings/organization.pdf">WWW'14</a>.
+            </p>
+        </section>
+
+    </article>
+</section>

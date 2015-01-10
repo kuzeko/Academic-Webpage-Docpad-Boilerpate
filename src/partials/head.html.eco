@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Site Properities -->
+    <title><%= @getPreparedTitle() %></title>
+    <meta name="description" content="<%= @getPreparedDescription() %>" />
+    <meta name="keywords" content="<%= @getPreparedKeywords() %>" />
+    <base href="<%- @site.url %>" />
+    <!-- DocPad Meta -->
+    <%- @getBlock('meta').toHTML() %>
+
+
+    <!-- DocPad Styles + Our Own -->
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Open+Sans:800italic,800,400' rel='stylesheet' type='text/css'>
+    <%- @getBlock('styles').add(@getGruntedStyles()).toHTML() %>
+
+    <!-- Icons -->
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png" />
+
+</head>

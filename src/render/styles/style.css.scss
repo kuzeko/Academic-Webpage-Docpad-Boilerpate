@@ -1,0 +1,102 @@
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+// Root file for all styles
+//
+// Contains:
+//   - Variables (to be edited)
+//   - Include of basic style files
+//   - Include of custom style file (to be edited)
+//   - Include of print style file (when you print the webpage)
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+// Site Variables
+// Following rules are to customize
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+// Colors
+
+$brand-color-dark : #021537;
+$brand-color : #00407F;
+$brand-color-light : #0060BF;
+$brand-color-lighter : #78aaee;
+
+$accent-color-dark :  #4B2328;
+$accent-color :  #BE3714;
+$accent-color-light: #FB4208;
+
+// Default Colors
+$black: #333;
+$white: #fff;
+$pale-white: #f9f9f9;
+
+$grey-light: #ddd;
+$grey: #ccc;
+$grey-dark: #666;
+
+$green: #6bac60;
+
+// Font variables
+$title-font : 'Open Sans', sans-serif;
+$normal-font :  'Lora', serif;
+$code-font :  'Monaco', monospace, monospace;
+
+// $base-font-size: 1em;
+// $base-line-height: 1.5em;
+$base-font-size: 1em;
+$base-line-height: 1.5em;
+$body-color: $black;
+
+// Link colors
+$link-color: $brand-color;
+$link-hover-color: $brand-color-light;
+
+// Select colors
+$select-background: $brand-color-light;
+$select-color: $white;
+
+
+
+// Grid options
+$gutter_width: 32px; // Your gutter width
+$columns: 15;        // The amount of columns you want
+$max_width: 1360px;  // Set a maximum width of the site
+
+// Mediaqueries breakpoints
+// Small
+$s-max : 480;
+// Medium
+$m-max : 800;
+// Large
+$l-max :1200;
+
+// Min with at which show menu
+$show-menu-width : 600; // Under 600px we activate mobile-friendly version
+
+
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+// Utilities - doesn't define style rules
+// cascade doesn't matter
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+@import 'base/_gridset';
+@import 'base/_media';
+
+
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+// Real style - does define style rules
+// cascade matters
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+@import 'base/_normalize';   // Resetting for all browsers
+@import 'base/_boilerplate'; // Setting some smart default
+
+// Following are basic styles,
+// you should not change them
+@import 'base/_baseline';    // Styling basic appearance
+@import 'base/_typography';  // Styling headings
+@import 'base/_elements';    // Helper classes for some special elements
+
+// Edit only this file
+@import '_custom';
+
+
+// Print goes last and overwrites all
+// do not change it!
+@import 'base/_print';

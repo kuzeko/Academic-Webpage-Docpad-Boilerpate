@@ -1,0 +1,25 @@
+<nav class="main-container"  role="navigation">
+    <ul class="container main-content menu-list" id="utility">
+        <li class="menu-item">
+            <a href="#menu"  id="menu-link">Menu</a>
+        </li>
+        <li class="menu-item visuallyhidden">
+            <a href="#content"  id="content-link">Go to Content</a>
+        </li>
+    </ul>
+    <ul class="container main-content menu-list" id="menu">
+        <li class="menu-item  <%- if @document.name is 'home' then 'active' %>">
+            <a href="<%- @site.url %>">
+                Home
+            </a>
+        </li>
+        <% for page in @getCollection("sections").toJSON(): %>
+        <li class="menu-item <%- if page.name is @document.name or page.name is @document.inSection then 'active'  %>">
+            <a href="<%- @site.url %><%= page.url %>">
+                <%= page.menuTitle %>
+            </a>
+        </li>
+        <% end %>
+    </ul>
+</nav>
+

@@ -1,40 +1,62 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-	<head>
-		<!-- Standard Meta -->
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="wwidth=device-width, initial-scale=1" />
+<%- @partial('head') %>
 
-		<!-- Site Properities -->
-		<title><%= @getPreparedTitle() %></title>
-		<meta name="description" content="<%= @getPreparedDescription() %>" />
-		<meta name="keywords" content="<%= @getPreparedKeywords() %>" />
+<body class="<%= @document.pageType %>">
+    <section class="page-wrapper" id="main-page-wrap">
 
-		<!-- DocPad Meta -->
-		<%- @getBlock('meta').toHTML() %>
+        <header class="main-container" role="banner" tabindex="-1">
+            <div class="container main-content page-headings">
+                    <h1 class="main-title">
+                        <a href="<%- @site.url %>/#me"><%= @site.owner %>'s</a>
+                    </h1>
+                    <h2 class="sub-title">
+                        <% if  @document.pageType == 'homepage' : %>
+                            Personal Page
+                        <% else : %>
+                        <%- @document.headerTitle %>
+                        <% end %>
+                    </h2>
+            </div>
+        </header>
 
-		<!-- DocPad Styles + Our Own -->
-		<%- @getBlock('styles').add(@getGruntedStyles()).toHTML() %>
+        <%- @partial('nav') %>
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <%- @content %>
 
-	</head>
-	<body>
-	    <!--[if lt IE 7]>
-	        <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-	    <![endif]-->
+        <% if @document.pageType is 'homepage' : %>
+        <aside class="main-container">
+            <article class="h-card secondary-content" id="me">
+                <figure class="container picture">
+                    <img class="u-photo" src="<%- @site.url%>/images/me.png" alt="<%= @site.owner %>'s photo" />
+                    <figcaption>
+                        Pictures taken at <a href="#">Antani</a>
+                    </figcaption>
+                </figure>
+                <section class="container personal-info">
+                    <address class="contact-info">
+                        <strong class="subhead">Contact:</strong><br />
+                        <a class="p-name u-url visuallyhidden" href="<%= @site.url %>"><%= @site.owner %></a>
+                        <a class="u-email" href="mailto:<%= @site.email %>"><%= @site.email %></a>
+                    </address>
 
-		<header></header>
-		<article>
-			<%- @content %>
-		</article>
-		<footer></footer>
+                    <p  class="short-bio">
+                        <strong class="subhead">Role:</strong><br />
+                        <em class="p-role">PhD. Student</em>
+                        in the
+                        <a class="p-org u-url fn" rel="group" href="http://db.disi.unitn.eu/">dbTrento</a>
+                        research group<br />
+                        and <em class="p-role">Teacher Assistant</em><br />
+                        at the <em class="p-org">University of Trento</em>,
+                        <em class="p-country-name">Italy</em>
+                    </p>
+                </section>
+            </article>
+        </aside>
+        <% end %>
 
-		<!-- DocPad Scripts + Our Own -->
-		<%- @getBlock('scripts').add(@getGruntedScripts()).toHTML() %>
-	</body>
+        <%- @partial('footer') %>
+    </section>
+
+    <!-- DocPad Scripts + Our Own -->
+    <%- @getBlock('scripts').add(@getGruntedScripts()).toHTML() %>
+</body>
 </html>

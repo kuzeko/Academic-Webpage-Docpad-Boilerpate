@@ -1,0 +1,163 @@
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+// CSS rules for various styling
+// borrowed  around
+// you can use something like
+// @extend .FlexEmbed; //get FlexEmbed properties
+//
+//   Variables Needed:
+
+     $show-menu-width : 600 !default;
+//
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+
+
+/*! suit-flex-embed v1.4.0 | MIT License | github.com/suitcss */
+
+.FlexEmbed {
+  display: block;
+  overflow: hidden;
+  position: relative;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+  }
+}
+
+
+.FlexEmbed--3by1 {
+  &:before {
+    padding-bottom: 33.33333%;
+  }
+}
+
+.FlexEmbed--2by1 {
+  &:before {
+    padding-bottom: 50%;
+  }
+}
+
+.FlexEmbed--16by9 {
+  &:before {
+    padding-bottom: 56.25%;
+  }
+}
+
+.FlexEmbed--4by3 {
+  &:before {
+    padding-bottom: 75%;
+  }
+}
+
+.FlexEmbed--3by4 {
+  &:before {
+    padding-bottom: 133.333333%;
+  }
+}
+
+.FlexEmbed--2by3 {
+  &:before {
+    padding-bottom: 150%;
+  }
+}
+
+
+.FlexEmbed--1by3 {
+  &:before {
+    padding-bottom: 300%;
+  }
+}
+
+.FlexEmbed--1by2 {
+  &:before {
+    padding-bottom: 200%;
+  }
+}
+
+
+.CoverImage {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto 1em;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+
+
+
+/*! Responsive Menu */
+/*! http://codepen.io/bradfrost/pen/sHvaz */
+
+    #menu-link {
+    }
+
+    #menu {
+      clear: both;
+      -webkit-transition: height 0.3s ease-out,
+                          max-height 0.3s ease-out,
+                          padding 0.3s ease-out,
+                          margin 0.3s ease-out;
+
+         -moz-transition: height 0.3s ease-out,
+                          max-height 0.3s ease-out,
+                          padding 0.3s ease-out,
+                          margin 0.3s ease-out;
+
+          -ms-transition: height 0.3s ease-out,
+                          max-height 0.3s ease-out,
+                          padding 0.3s ease-out,
+                          margin 0.3s ease-out;
+
+           -o-transition: height 0.3s ease-out,
+                          max-height 0.3s ease-out,
+                          padding 0.3s ease-out,
+                          margin 0.3s ease-out;
+
+              transition: height 0.3s ease-out,
+                          max-height 0.3s ease-out,
+                          padding 0.3s ease-out,
+                          margin 0.3s ease-out;
+    }
+
+    .js #menu {
+      overflow: hidden;
+      max-height: 0;
+    }
+
+    #menu.active {
+      max-height: 15em;
+    }
+
+
+
+    @media only screen and (min-width: ($show-menu-width/16)*1em) {
+      #menu-link {
+         display: none;
+      }
+
+      #menu {
+        clear: both;
+        -webkit-transition: none;
+           -moz-transition: none;
+            -ms-transition: none;
+             -o-transition: none;
+                transition: none;
+      }
+
+
+      .js #menu {
+        max-height: none;
+      }
+
+    }
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+<footer class="main-container" role="contentinfo">
+    <div class="container main-content page-footer">
+        <address class="h-card">
+            <a class="p-name u-url" href="<%- @site.url %>"><%= @site.owner %></a>
+            &mdash;
+            <em class="p-role">PhD. Student</em> @
+            <span class="p-org">University of Trento</span>
+        </address>
+    </div>
+</footer>

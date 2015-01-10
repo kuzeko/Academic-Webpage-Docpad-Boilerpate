@@ -1,2 +1,9 @@
+# Docpad
 node_modules/
 out/
+
+# SASS
+.sass-cache
+*.css.map
+
+#

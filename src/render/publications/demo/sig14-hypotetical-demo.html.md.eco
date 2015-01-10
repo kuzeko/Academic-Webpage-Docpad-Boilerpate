@@ -1,0 +1,19 @@
+---
+title: 'An hypotetical demo publication'
+layout: 'article'
+name: 'sig14-hypotetical'
+
+headerTitle: 'An hypotetical [...] publication'
+menuTitle: 'Hypotetical Demo conf (2014)'
+
+pageType: 'secondary'
+public: true
+
+inSection: 'publications'
+hasPage: false
+date: 2014-12-01
+venue: 'ACM SIG* 43(4), 2014'
+authors: 'Author One, Second Author, Author T. Hird'
+file: 'pdf/sig14-hypotetical.pdf'
+---
+

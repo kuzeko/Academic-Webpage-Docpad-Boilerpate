@@ -1,0 +1,60 @@
+---
+title: 'Notes and Infos'
+layout: 'default'
+name: 'blog'
+
+headerTitle : 'Notes and Writing'
+menuTitle: 'Blog'
+
+pageType : 'secondary'
+public: true
+orderValue : 3
+---
+<section class="main-container">
+<article class="container main-content" id="content" role="main">
+<section class="primary-content">
+<h1>Blog Posts:</h1>
+<section class="intro">
+    <p  class="subhead">
+    Here I Share My Thoughts &amp; Discoveries, related to various topics.
+    Entries are presented in reverse chronological order and may or my not be about the most disparate topics I found banter my days and working hours</p>
+</section>
+<section class="content-section">
+    <% for note in @getCollection("posts").toJSON(): %>
+    <article id="<%= note.name %>">
+            <h2 class="article-title">
+                <a class="title-link" href="<%- @site.url %><%- note.url %>" title="Read the article">
+                <%- note.title %>
+                </a>
+            </h2>
+            <time datetime="<%= note.computerDate %>" class="pub-date"><%= note.humanDate %></time>
+    </article>
+    <% end %>
+</section>
+</section>
+</article>
+</section>
+
+<aside class="main-container">
+<section class="container secondary-content">
+    <h2>Useful links</h2>
+    <p class="subhead">
+        Computer Science, programming, web development and more &hellip;
+    </p>
+
+    <h3>Projects</h3>
+    <ul>
+        <li><a href="https://github.com/">My repos on github</a></li>
+        <li><a href="https://developers.google.com/web/fundamentals/">Google Web fundamentals</a></li>
+    </ul>
+
+
+
+    <h3>Publications</h3>
+    <ul>
+        <li><a href="http://dblp.l3s.de/">DbLp</a></li>
+        <li><a href="http://scholar.google.it/">Google Scholar</a></li>
+    </ul>
+
+</section>
+</aside>

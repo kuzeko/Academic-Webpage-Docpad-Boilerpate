@@ -1,0 +1,44 @@
+<%- @partial('head') %>
+
+<body class="<%= @document.pageType %> article-page">
+    <section class="page-wrapper" id="main-page-wrap">
+
+        <header class="main-container" role="banner">
+            <div class="container main-content page-headings">
+                <h1 class="main-title">
+                    <a href="<%- @site.url %>/#me"><%= @site.owner %>'s</a>
+                </h1>
+                <h2 class="sub-title">
+                    <%- @document.title %>
+                </h2>
+                <% if @document.inSection is "posts": %>
+                <time datetime="<%= @document.computerDate %>" class="pub-date subhead">
+                    <%= @document.humanDate %>
+                </time>
+                <% end %>
+                <% if @document.inSection is "publications": %>
+                <em  class="pub-venue subhead">
+                    Published in: <%= @document.venue %>
+                </em>
+                <% end %>
+
+            </div>
+        </header>
+
+        <%- @partial('nav') %>
+
+        <section class="main-container">
+            <article class="container main-content" id="content" role="main">
+            <section class="primary-content">
+                <%- @content %>
+             </section>
+             </article>
+         </section>
+
+        <%- @partial('footer') %>
+    </section>
+
+    <!-- DocPad Scripts + Our Own -->
+    <%- @getBlock('scripts').add(@getGruntedScripts()).toHTML() %>
+</body>
+</html>

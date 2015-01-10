@@ -1,0 +1,131 @@
+---
+title: 'Scientific Publications'
+layout: 'default'
+name: 'publications'
+
+headerTitle : 'Publications'
+menuTitle: 'Publications'
+
+pageType : 'secondary'
+public: true
+orderValue : 2
+---
+
+<section class="main-container">
+    <article class="container main-content" id="content" role="main">
+
+        <section class="primary-content">
+            <h1>List of Publications:</h1>
+
+            <section class="intro">
+                <p class="subhead">
+                Here is present a selected list of publications, organized by type and displayed in reverse chronological order.
+                Additional material, datasets, source-code or details may be provided upon request by <a href="mailto:<%- @site.email %>">e-mail</a>.
+                </p>
+            </section>
+
+            <% if @getCollection("book").length > 0 : %>
+            <section class="content-section">
+                <h2>Book &amp; Book Chapters</h2>
+
+                <% for publication in @getCollection("book").toJSON(): %>
+                <article id="<%= publication.name %>">
+                    <h3 class="article-title">
+                        <%= publication.title %>
+                    </h3>
+                    <em><%= publication.authors %></em><br />
+                    <%= publication.venue %>
+                    <% if  publication.hasPage : %>
+                    &mdash;
+                    <a href="<%- publication.url %>" class="to-page">More info</a>
+                    <% end %>
+                    <% if  publication.file : %>
+                    &mdash;
+                    <a class="attachment" href="<%- @site.url %>/<%- publication.file %>" title="Download a digital copy">
+                            (PDF)
+                    </a>
+                    <% end %>
+                </article>
+                <% end %>
+            </section>
+            <% end %>
+
+            <% if @getCollection("journal").length > 0 : %>
+            <section class="content-section">
+                <h2>Journal</h2>
+                <% for publication in @getCollection("journal").toJSON(): %>
+                <article id="<%= publication.name %>">
+                    <h3 class="article-title">
+                        <%= publication.title %>
+                    </h3>
+                    <em><%= publication.authors %></em><br />
+                    <%= publication.venue %>
+                    <% if  publication.hasPage : %>
+                    &mdash;
+                    <a href="<%- publication.url %>" class="to-page">More info</a>
+                    <% end %>
+                    <% if  publication.file : %>
+                    &mdash;
+                    <a class="attachment" href="<%- @site.url %>/<%- publication.file %>" title="Download a digital copy">
+                            (PDF)
+                    </a>
+                    <% end %>
+                </article>
+                <% end %>
+            </section>
+            <% end %>
+
+
+
+            <% if @getCollection("conference").length > 0 : %>
+            <section class="content-section">
+                <h2>Conference</h2>
+                <% for publication in @getCollection("conference").toJSON(): %>
+                <article id="<%= publication.name %>">
+                    <h3 class="article-title">
+                        <%= publication.title %>
+                    </h3>
+                    <em><%= publication.authors %></em><br />
+                    <%= publication.venue %>
+                    <% if  publication.hasPage : %>
+                     &mdash;
+                     <a href="<%- publication.url %>" class="to-page">More info</a>
+                    <% end %>
+                    <% if  publication.file : %>
+                    &mdash;
+                    <a class="attachment" href="<%- @site.url %>/<%- publication.file %>" title="Download a digital copy">
+                            (PDF)
+                    </a>
+                    <% end %>
+                </article>
+                <% end %>
+            </section>
+            <% end %>
+
+            <% if @getCollection("demo").length > 0 : %>
+            <section class="content-section">
+                <h2>Demo&amp; Workshops</h2>
+                <% for publication in @getCollection("demo").toJSON(): %>
+                <article id="<%= publication.name %>">
+                    <h3 class="article-title">
+                        <%= publication.title %>
+                    </h3>
+                    <em><%= publication.authors %></em><br />
+                    <%= publication.venue %>
+                    <% if  publication.hasPage : %>
+                    &mdash;
+                    <a href="<%- publication.url %>" class="to-page">More info</a>
+                    <% end %>
+                    <% if  publication.file : %>
+                    &mdash;
+                    <a class="attachment" href="<%- @site.url %>/<%- publication.file %>" title="Download a digital copy">
+                            (PDF)
+                    </a>
+                    <% end %>
+                </article>
+                <% end %>
+            </section>
+            <% end %>
+        </section>
+    </article>
+</section>

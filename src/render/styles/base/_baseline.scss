@@ -1,0 +1,360 @@
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+// Basic Styles
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+//
+// Sets up some decent default css styles
+//
+// @author Abban Dunne http://abandon.ie
+// @author James Wilson http://jimmynotjim.com
+// @version 1.1
+//
+// Variables Needed:
+//
+//  - $base-line-height
+//  - $grey
+//  - $grey-dark
+//  - $grey-light
+//  - $link-color
+//  - $link-hover-color
+//  - $select-background
+//  - $select-color
+//
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+// = Set up baseline
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+
+html{
+    font-size: 100.01%;
+}
+
+body{
+    // Optional type aliasing
+    text-shadow: 0 -1px 1px rgba(255, 255, 255, 0.01);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+// = Selection Colors                                                       = */
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+
+::selection{
+    background: $select-background;
+    color: $select-color;
+}
+::-moz-selection{
+    background: $select-background;
+    color: $select-color;
+}
+img::selection{
+    background: transparent;
+}
+img::-moz-selection{
+    background: transparent;
+}
+body{
+    -webkit-tap-highlight-color: $select-background;
+}
+
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+// = Links                                                                  = */
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+
+a{
+    color: $link-color;
+    position: relative;
+
+    &:hover, &:focus{
+        color: $link-hover-color;
+    }
+
+    &:active {
+        top: 0.1em;
+    }
+
+    // Optional transition
+    -webkit-transition: color .2s linear, top .2s linear;
+       -moz-transition: color .2s linear, top .2s linear;
+         -o-transition: color .2s linear, top .2s linear;
+            transition: color .2s linear, top .2s linear;
+}
+
+
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+// = Images                                                                 = */
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+
+// Make images responsive
+figure img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+// Figcaption styling
+figcaption{
+    font-size: small;
+    font-style: italic;
+    color: $grey-dark;
+}
+
+
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+// = Forms                                                                  = */
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+
+form{
+    margin-bottom: $base-line-height;
+}
+
+form ul{
+    list-style-type: none;
+    list-style-image: none;
+    margin: 0;
+    padding: 0;
+    li{
+        @include clearfix();
+        margin-bottom: $base-line-height;
+    }
+}
+
+fieldset{
+    margin: 0;
+    padding: $base-line-height;
+}
+
+label{
+    display: block;
+}
+
+label.inline{
+    display: inline;
+    padding-right: $base-line-height;
+}
+
+
+input[type="text"],
+input[type="url"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="tel"],
+textarea,
+select{
+    &:focus{
+        outline: 0px; // Probably should leave outlines?
+        -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+           -moz-box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+            -ms-box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+                box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+    }
+}
+
+input[type="text"],
+input[type="url"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="tel"],
+textarea{
+    display: block;
+    width: 100%;
+    margin: 0 0 0.5*$base-line-height;
+    padding: 0.3em;
+    border: 1px solid $grey;
+    line-height: $base-line-height;
+}
+
+select{
+    width: 100%;
+    height: 1.25*$base-line-height;
+    margin-bottom: 0.75*$base-line-height;
+    border: 1px solid $grey;
+}
+
+input[type="range"],
+input[type="color"]{
+    vertical-align: middle;
+    height: 1.5em;
+    width: 100%;
+}
+
+input[type="range"]{
+    height: 1.4em;
+}
+
+
+input[type="color"]{
+    width: 1.5em;
+}
+
+// Time element is a little weird with the extra controls
+input[type="time"]{
+    margin: 0 0 0.5*$base-line-height;
+}
+
+progress,
+meter{
+    display: block;
+    width: 100%;
+    height: $base-line-height;
+}
+
+input[type="submit"],
+input[type="button"],
+.button {
+    border: 1px solid $grey;
+    background: $grey-light;
+    padding: 0.5*$base-line-height 2*$base-line-height;
+    margin: 0 1.5*$base-line-height 0 0;
+    line-height: $base-line-height;
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+            border-radius: 3px;
+
+    &:focus,
+    &:hover {
+        background: $green;
+    }
+}
+
+
+
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+// = Tables                                                                 = */
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+
+table {
+    margin-bottom: $base-line-height;
+    width: 100%;
+    border: 1px solid $grey;
+}
+
+thead{
+    text-align: left;
+    font-weight: bold;
+}
+
+tbody{
+    tr: nth-child(even) td{
+        background: $grey-light;
+    }
+}
+
+tfoot{
+    font-style: italic;
+    td, th{
+        padding: 0.5*$base-line-height;
+    }
+}
+
+th,td,caption{
+    border: 1px solid $grey;
+}
+
+td, th{
+    padding: 0 0.5*$base-line-height;
+    line-height: $base-line-height;
+}
+
+caption{
+    border-bottom: 0;
+    padding: .75em 10px;
+    line-height: $base-line-height;
+    text-align: left;
+    font-style: italic;
+}
+
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+// = Other elements                                                         = */
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+
+p{
+    margin: 0 0 $base-line-height 0;
+}
+
+blockquote{
+    margin: 0 $base-line-height $base-line-height;
+    font-style: italic;
+}
+
+del{
+    color: $grey-light;
+}
+
+
+hr {
+    background: $grey;
+    color: $grey;
+    clear: both;
+    float: none;
+    width: 100%;
+    height: 1px;
+    margin: 0 0 $base-line-height;
+    border: none;
+}
+
+
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+// = Scource code
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+
+
+
+pre {
+  overflow: auto;
+  color: white;
+  background: $grey-dark;
+  margin-top: 0;
+  margin-bottom: $base-line-height;
+  padding: 0;
+  font-size: 0.85;
+  font-family: $code-font;
+
+  -moz-tab-size: 2;
+    -o-tab-size: 2;
+       tab-size: 2;
+
+  -ms-word-break: normal;
+      word-break: normal;
+
+
+  -webkit-hyphens: none;
+     -moz-hyphens: none;
+      -ms-hyphens: none;
+          hyphens: none;
+
+  position: relative;
+
+
+  code {
+    &[rel=bash]:first-word {
+      color:$brand-color;
+    }
+
+    font-family: $code-font;
+    background: none;
+    padding: 15px;
+
+    white-space: pre;
+    word-wrap: normal;
+    overflow: auto;
+    display: block;
+  }
+
+}

@@ -1,0 +1,19 @@
+---
+title: 'An hypotetical jconference publication 2'
+layout: 'article'
+name: 'sig13-hypotetical'
+
+headerTitle: 'An hypotetical [...] publication'
+menuTitle: 'Hypotetical journal (2013)'
+
+pageType: 'secondary'
+public: true
+
+inSection: 'publications'
+hasPage: false
+date: 2013-12-01
+venue: 'ACM SIG* 43(4), 2013'
+authors: 'Author One, Second Author, Author T. Hird'
+file: 'pdf/sig13-hypotetical.pdf'
+---
+

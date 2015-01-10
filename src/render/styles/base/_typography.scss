@@ -1,0 +1,233 @@
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+// Some typographic styles for Headings
+//
+// Variables Needed:
+//
+//  - $base-font-size
+//  - $base-line-height
+//
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+
+$base-font-size: 1em !default;
+$base-line-height: 1.5em !default;
+
+$h0-font-size: 2.25em;
+$h0-line: 0.666666667em;
+$h0-lines: 2;
+$h0-line-height: $h0-line * $h0-lines;
+$h0-margin-top: 3 * $h0-line;
+$h0-margin-bottom: 1 * $h0-line;
+
+$h1-bigger-font-size: 2em;
+$h1-bigger-line: 0.75em;
+$h1-bigger-lines: 2;
+$h1-bigger-line-height: $h1-bigger-line * $h1-bigger-lines;
+$h1-bigger-margin-top: 3 * $h1-bigger-line;
+$h1-bigger-margin-bottom: 1 * $h1-bigger-line;
+
+$h1-font-size: 1.8125em;
+$h1-line: 0.827586207em;
+$h1-lines: 2;
+$h1-line-height: $h1-line * $h1-lines;
+$h1-margin-top: 3 * $h1-line;
+$h1-margin-bottom: 1 * $h1-line;
+
+$h2-font-size: 1.625em;
+$h2-line: 0.923076923em;
+$h2-lines: 2;
+$h2-line-height: $h2-line * $h2-lines;
+$h2-margin-top: 3 * $h2-line;
+$h2-margin-bottom: 1 * $h2-line;
+
+$h3-font-size: 1.4375em;
+$h3-line: 1.043478261em;
+$h3-lines: 1;
+$h3-line-height: $h3-line * $h3-lines;
+$h3-margin-top: 2 * $h3-line;
+$h3-margin-bottom: 0 * $h3-line;
+
+
+$h4-font-size: 1.25em;
+$h4-line: 1.2em;
+$h4-lines: 1;
+$h4-line-height: $h4-line * $h4-lines;
+$h4-margin-top: 2 * $h4-line;
+$h4-margin-bottom: 1 * $h4-line;
+
+$h5-font-size: 1.125em;
+$h5-line: 1.333333333em;
+$h5-lines: 1;
+$h5-line-height: $h5-line * $h5-lines;
+$h5-margin-top: 2 * $h5-line;
+$h5-margin-bottom: 1 * $h5-line;
+
+$h6-font-size: 1.125em;
+$h6-line: 1.333333333em;
+$h6-lines: 1;
+$h6-line-height: $h6-line * $h6-lines;
+$h6-margin-top: 2 * $h6-line;
+$h6-margin-bottom: 1 * $h6-line;
+
+
+
+
+// Variables are rounded to pixels
+// It's safe to multiply with integers
+// eg. h1 {margin: 2*$h1-line 0;}
+// The grid will stay aligned
+//
+
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+
+html {
+    font-size: 100%;
+    font-size: 16px;
+}
+
+body {
+  font-family: $normal-font;
+  font-size: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: $base-line-height;
+
+  margin: 0 auto;
+
+  color: $body-color;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  margin: $base-line-height*1.5 0 $base-line-height*0.5;
+  font-weight: bold;
+  line-height: $base-line-height;
+}
+
+
+
+h1 {
+    font-family: $title-font ;
+    font-weight: bold;
+    font-size: $h1-font-size;
+
+    line-height: $h1-line-height;
+    margin-top: 0.5*$h1-margin-top;
+    margin-bottom: $h1-margin-bottom;
+}
+
+h1 ~ h1 {
+    margin-top: $h1-margin-top;
+}
+
+
+h2,
+.secondary-content h1 {
+    font-family: $title-font ;
+    font-weight: bold;
+    font-size: $h2-font-size;
+
+    line-height: $h2-line-height;
+    margin-top: 0.5*$h2-margin-top;
+    margin-bottom: $h2-margin-bottom;
+}
+
+
+h2 ~ h2,
+.secondary-content h1 ~ .secondary-content h1 {
+    margin-top: $h2-margin-top;
+}
+
+h3,
+.secondary-content h2, {
+    font-family: $title-font ;
+    font-weight: bold;
+    font-size: $h3-font-size;
+
+    line-height: $h3-line-height;
+    margin-top: 0.5*$h3-margin-top;
+    margin-bottom: $h3-margin-bottom;
+}
+
+h3 ~ h3,
+.secondary-content h2 ~ .secondary-content h2, {
+    margin-top: $h3-margin-top;
+}
+
+
+h4,
+.secondary-content h3 {
+    font-family: $title-font;
+    font-weight: normal;
+    font-size: $h4-font-size;
+
+    line-height: $h4-line-height;
+    margin-top: $h4-margin-top;
+    margin-bottom: $h4-margin-bottom;
+
+    text-transform: capitalize;
+}
+
+.secondary-content h3 {
+    margin-top: 0.5*$h4-margin-top;
+}
+
+.secondary-content h3 ~ .secondary-content h3 {
+    margin-top: $h4-margin-top;
+}
+
+
+h5,
+.secondary-content h4 {
+    font-family: $title-font ;
+    font-weight: bold;
+    font-size: $h5-font-size;
+
+    line-height: $h5-line-height;
+    margin-top: $h5-margin-top;
+    margin-bottom: $h5-margin-bottom;
+
+    text-transform: uppercase;
+}
+
+h6,
+.secondary-content h5,
+.subhead,
+legend,
+dt  {
+    font-family: $title-font ;
+    font-weight: normal;
+    font-size: $h6-font-size;
+
+    line-height: $h6-line-height;
+    margin-top: $h6-margin-top;
+    margin-bottom: $h6-margin-bottom;
+
+    text-transform: capitalize;
+}
+
+.subhead {
+    font-weight: normal;
+    text-transform: none;
+
+    margin-top: 1 * $h6-line;
+}
+
+legend,
+dt  {
+    margin-bottom: 0;
+}
+
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+// Others
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+
+p, ul, ol, pre, table, blockquote {
+    margin-top: $base-line-height;
+    margin-bottom: $base-line-height;
+}
+
+small,
+.font_small {
+    font-size: 0.75em;
+}
+

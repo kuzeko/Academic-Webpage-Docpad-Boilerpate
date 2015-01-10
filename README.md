@@ -1,55 +1,62 @@
-# [HTML5 Boilerplate](http://html5boilerplate.com/) skeleton for [DocPad](https://github.com/bevry/docpad)
-Bare essentials for building a modern website with best practices
+# My Academic Webpage skeleton for [DocPad](https://github.com/bevry/docpad)
+
+>   Bare essentials for building a modern website with best practices
+
+This is a fork of the skeleton [HTML5 Boilerplate with Grunt for Docpad](https://github.com/lukekarrys/html5-boilerplate.docpad) by [lukekarrys](https://github.com/lukekarrys).
+
 
 ## Why the fork?
-This fork adds [Grunt](http://gruntjs.com/) to show an example of taking the HTMLBP and minifying and concatenating all the JS and CSS assets into single files and including those in the layout.
+This fork puts some more structure and some starting layout on top of the original skeleton (which is a for itself). 
+You shall see the [Original README](https://github.com/lukekarrys/html5-boilerplate.docpad/blob/master/README.md).
 
-## What is different?
-
-### `grunt-config.json`
-- This file is contains the object passed to `grunt.initConfig` in `grunt.js`. It has been put into its own file since it is used in `docpad.coffee` to build file lists for inclusion in the layout and deleting unused files.
-
-### `grunt.js`
-- This is the Grunt file. It runs `initConfig` with the `grunt-config.json` object. It also registers a `default` task with all the keys from the config file.
-
-### `docpad.coffee`
-- I added the helper functions [`getGruntedStyles`]() and [`getGruntedScripts`](). These functions will return all the compiled assets that contain `.min.(css|js)` with the correct base path.
-- A [`writeAfter`]() DocPad event. It is based on [this gist](https://gist.github.com/3898915), with some additional functionality. It will run the `default` grunt command. Then it will use your `grunt-config.json` to delete the `src` files since they are no longer needed. It will also delete any empty directories in the 'out/' directory.
-
-### `layouts/default.html.eco`
-- The script and style blocks have been replaced with calls to the helper functions described above.
+**Ideally, if you clone this repo things will be almost ready for you to have a personal webpage online in no time**
 
 
 ## Getting Started
 
 1. [Install DocPad](https://github.com/bevry/docpad)
 
-1. Clone the project and run the server
+2. Clone the project and run the server
 
 	``` bash
-	git clone git://github.com/lukekarrys/html5-boilerplate.docpad.git
-	cd html5-boilerplate.docpad
+	git clone git://github.com/kuzeko/html5-boilerplate.docpad.git my-page
+	cd my-page
 	npm install
 	docpad run
 	```
 
-1. [Open http://localhost:9778/](http://localhost:9778/)
+3. [Open http://localhost:8080/](http://localhost:8080/)
 
-1. Start hacking away by modifying the `src` directory
+4. Start hacking away by modifying the `src` directory
 
+5. [ *more to come...* ] 
+
+
+## Includes
+
+1. [jQuery JavaScript Library v1.11.2](http://jquery.com/)
+
+2. [Modernizr v2.8.3, Minimum custom build](http://modernizr.com/)
+
+3. [normalize.css v3.0.2](http://necolas.github.io/normalize.css/)
 
 ## License
+    
+    Copyright (C) 2014  Matteo Lissandrini a.k.a. Kuzeko
 
-This skeleton is made ["public domain"](http://en.wikipedia.org/wiki/Public_domain) using the [Creative Commons Zero](http://creativecommons.org/publicdomain/zero/1.0/), as such before you publish your website you should place your desired license here and within the `LICENSE.md` file.
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
-If you are wanting to open-source your website, we suggest using the [Creative Commons Attribution License](http://creativecommons.org/licenses/by/3.0/) for content and the [MIT License](http://creativecommons.org/licenses/MIT/) for code. In which case you'd probably want to use the following as your license:
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-	Unless stated otherwise, all content is licensed under the [Creative Commons Attribution License](http://creativecommons.org/licenses/by/3.0/) and code licensed under the [MIT License](http://creativecommons.org/licenses/MIT/), © [Your Name](http://your.website)
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-If you are wanting to close-source your website, we'd suggest using the following:
 
-	Copyright [Your Name](http://your.website). All rights reserved.
+	Other included things such as themes and libraries are likely already licensed by their own invidual licenses, so be sure to respect their licenses too.
 
-Other included things such as themes and libraries are likely already licensed by their own invidual licenses, so be sure to respect their licenses too.
-
-Thanks, the DocPad team loves you.

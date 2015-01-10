@@ -1,0 +1,208 @@
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+//! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+//
+// HTML5 Boilerplate
+//
+// What follows is the result of much research on cross-browser styling.
+// Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+// Kroc Camen, and the H5BP dev community and team.
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+// Base styles: opinionated defaults
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+// Box sizing makes life easier
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+//
+// Border box:
+// http://css-tricks.com/international-box-sizing-awareness-day/
+// http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+
+html {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+     -moz-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+// Chrome Frame prompt
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+// Helper classes
+// == == == == == == == == == == == == == == == == == == == == == == == == == */
+
+/*
+ * Image replacement
+ */
+@mixin image_replace(){
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+
+    &:before {
+        content: "";
+        display: block;
+        width: 0;
+        height: 100%;
+    }
+
+}
+.ir {
+    @include image_replace();
+}
+
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+@mixin hidden(){
+    display: none !important;
+    visibility: hidden;
+}
+.hidden {
+    @include hidden();
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+@mixin visually_hidden(){
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+}
+
+.visuallyhidden {
+  @include visually_hidden();
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+@mixin visually_hidden_focusable {
+    clip: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    position: static !important;
+    width: auto !important;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    @include visually_hidden_focusable();
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+
+/*
+ * A clearfix is made for elements containing other floating elements
+ * ergo for _containers_
+ *
+ */
+
+.container {
+    @include clearfix();
+}

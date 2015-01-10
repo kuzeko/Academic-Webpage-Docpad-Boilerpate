@@ -1,0 +1,495 @@
+/* ==========================================================================
+   Mobile First Layout
+   ========================================================================== */
+
+html{
+  height: 100%;
+  min-height: 100%;
+}
+
+body,
+.page-wrapper {
+  min-height: 100%;
+  position: relative;
+  z-index: 0;
+}
+
+.page-wrapper {
+    @include clearfix();
+    @include row(0);
+    padding-bottom: $h1-line-height;
+}
+
+.main-container {
+    @extend .container; //get clearfix
+    @include row($gutter_width);
+
+    position: relative;
+    z-index: 2;
+}
+
+
+header.main-container {
+    background-image: url(../images/geometry.png);
+    background-position: 0 100%;
+
+    .main-content {
+        @include column(1, $gutter_width, 1);
+    }
+
+    .main-title {
+
+    }
+
+    .sub-title {
+
+    }
+
+}
+
+nav.main-container {
+
+    padding-top: $gutter_width;
+    padding-bottom: $gutter_width;
+
+    #menu.active {
+        padding-top: $gutter_width;
+    }
+
+    .menu-list {
+        @include column(1, 0 , 1);
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .menu-item {
+        @include column(1, 0, 1);
+        a {
+           @include column(1, 0, 1);
+        }
+    }
+}
+
+
+
+figure {
+    margin:0;
+    margin-bottom: $base-line-height;
+    position: relative;
+
+    figcaption {
+      position: relative;
+      z-index: 2;
+    }
+}
+
+
+footer.main-container {
+  min-height: 3em;
+  padding-bottom: $base-line-height;
+  padding-top:$base-line-height;
+  overflow: hidden;
+
+  .main-content {
+        @include column(1, 0, 1);
+  }
+}
+
+@include gs-media(s) {
+    nav.main-container {
+        #menu {
+            .menu-item {
+                @include column(1, 0, 2);
+                a {
+                    @include column(1, $gutter_width, 1);
+                }
+            }
+        }
+    }
+
+
+    .secondary-content {
+        @include column(2, 0, 2);
+        .picture {
+            @include column(1, 0, 2);
+        }
+        .personal-info {
+            @include column(1, $gutter_width, 2);
+        }
+    }
+}
+
+
+/* ==========================================================================
+   Wider (Tablet) Layout
+   ========================================================================== */
+
+
+@include gs-media(m) {
+    .main-container {
+        @extend .container; //get clearfix
+        @include row(0);
+    }
+
+    header.main-container {
+        .main-content{
+            @include column(15, $gutter_width, 15);
+        }
+    }
+
+    nav.main-container {
+        .main-content {
+            @include column(15, $gutter_width, 15);
+        }
+
+        #utility {
+           @include visually-hidden();
+        }
+
+        #menu {
+            padding-bottom: 0;
+            .menu-item {
+                display: block;
+                padding-right: $gutter_width;
+                text-align: center;
+                float: left;
+                width: auto;
+            }
+        }
+    }
+
+    section.main-container {
+        @include column(8, 0, 15);
+        @include push(1);
+
+        .main-content {
+            @include column(15, 0, 15);
+        }
+    }
+    aside.main-container{
+        @include column(4, $gutter_width, 15);
+        @include push(1);
+        @include pull(1);
+
+        margin-top: $h1-margin-top;
+
+        .secondary-content {
+            @include column(15, 0, 15);
+            .picture {
+                margin-top: $h2-line-height;
+                @include column(4, 0, 4);
+            }
+            .personal-info {
+                @include column(4, 0, 4);
+            }
+        }
+    }
+
+    .article-page {
+        section.main-container {
+            @include column(13, $gutter_width, 15);
+            @include pull(1);
+            @include push(1);
+        }
+        aside.main-container{
+            @include column(13, $gutter_width, 15);
+            @include pull(1);
+            @include push(1);
+        }
+        .primary-content {
+            max-width: 54em;
+            margin: 0 auto;
+        }
+
+    }
+
+
+
+    footer.main-container {
+            @include column(13, $gutter_width, 15);
+            @include pull(1);
+            @include push(1);
+    }
+
+}
+
+/* ==========================================================================
+   Wide Full Desktop Layout
+   ========================================================================== */
+
+@include gs-media(l) {
+
+    header.main-container {
+        //@include column(9, $gutter_width, 12);
+    }
+
+
+    nav.main-container {
+        //@include column(9, $gutter_width, 12);
+    }
+
+    section.main-container {
+            // @include column(9, 0, 15);
+            // @include push(1);
+    }
+
+    aside.main-container{
+            // @include column(3, $gutter_width, 15);
+            // @include push(1);
+            // @include pull(1);
+    }
+
+
+}
+
+/*==========================================================================
+   Decoration
+   ========================================================================== */
+
+body {
+    background-color: $pale-white;
+    border-bottom: $h1-line-height solid $brand-color;
+}
+
+header.main-container {
+    background-color: $brand-color;
+
+    .main-title {
+        font-size: $h2-font-size;
+        line-height: $h2-line;
+        margin-top:0;
+        margin-bottom: 0;
+
+        text-transform: uppercase;
+    }
+
+    .main-title,
+    .sub-title,
+    .subhead,
+    .main-title a,
+    .main-title a:link,
+    .main-title a:visited,
+    .main-title a:hover {
+        color: $white;
+    }
+
+    .main-title {
+        display: block;
+        padding-top: 0.5*$h2-margin-top;
+        padding-bottom: 0.5*$h2-margin-bottom;
+    }
+
+    .main-title a {
+        text-decoration: none;
+    }
+
+    .sub-title {
+        font-size: $h4-font-size;
+        line-height: $h4-line;
+        margin-top: 0;
+    }
+
+    .subhead {
+        font-family: $normal-font;
+        margin-top: 0;
+        font-style: italic;
+    }
+
+}
+
+
+
+body.secondary {
+    header.main-container {
+        .main-title a {
+            margin-top: -1*$h2-line;
+            -webkit-transition: margin .2s linear;
+               -moz-transition: margin .2s linear;
+                 -o-transition: margin .2s linear;
+                    transition: margin .2s linear;
+        }
+
+        .main-title a:hover,
+        .main-title a:focus {
+            margin-top: 0;
+        }
+
+        background-position: 0 0;
+        -webkit-transition: background-position 3s ease-in;
+           -moz-transition: background-position 3s ease-in;
+             -o-transition: background-position 3s ease-in;
+                transition: background-position 3s ease-in;
+
+
+
+
+        &:hover {
+            background-position: 0 100%;
+        }
+    }
+}
+
+
+nav.main-container {
+    border-top:  0.125em solid $brand-color;
+    border-bottom:  0.125em solid $brand-color;
+
+    font-family: $title-font;
+    font-size: $h6-font-size;
+    line-height: 1.25*$h6-line-height;
+
+    .menu-item {
+        border-top:  1px solid $brand-color;
+    }
+
+    .menu-item a,
+    .menu-item a:link,
+    .menu-item a:visited {
+        color: $brand-color;
+
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+
+    .menu-item a:focus,
+    .menu-item a:hover {
+        background-color: $brand-color-lighter;
+        color: $white;
+    }
+
+    .menu-item.active a{
+        background-color: $brand-color-light;
+        color: $white;
+    }
+
+}
+
+section.main-container {
+    .primary-content {
+        h1 {
+            line-height: 0.65*$h1-line-height;
+        }
+        h2 {
+            line-height: 0.65*$h2-line-height;
+        }
+        h3 {
+            line-height: 0.65*$h3-line-height;
+        }
+
+        .article-title {
+            font-size: $h4-font-size;
+            line-height: $h4-line-height;
+            margin-bottom: 0;
+            font-weight: bold;
+
+            a {
+                color: $black;
+                text-decoration: none;
+
+                &:hover,
+                &:focus {
+                    color: $link-color;
+                    text-decoration: underline;
+                }
+
+            }
+
+            .attachment {
+                font-size: 0.75em;
+                padding-left: 0.5em;
+            }
+        }
+    }
+}
+
+
+
+aside.main-container {
+    background-image: url(../images/pattern.png);
+
+    border-bottom: 0.125em solid $brand-color;
+    border-top: 0.125em solid $brand-color;
+}
+
+.secondary-content {
+    strong {
+      font-family: $title-font;
+    }
+}
+
+footer.main-container {
+    text-align: right;
+}
+
+
+@include gs-media(m) {
+    header.main-container {
+        position: relative;
+        .main-title {
+            font-size: $h0-font-size;
+            line-height: $h0-line-height;
+
+            margin-top: 0.75*$h0-line;
+            margin-bottom: 0.25*$h0-line;
+
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .sub-title {
+            font-size: $h2-font-size;
+            line-height: 0.5*$h2-line-height;
+
+            margin-top: 0.25*$h2-line;
+            margin-bottom: 0.75*$h2-line;
+        }
+
+    }
+
+    nav.main-container {
+        .menu-item {
+            border-top:  0 solid $brand-color;
+        }
+    }
+
+
+    section.main-container {
+        .primary-content {
+            h1 {
+                line-height: $h1-line-height;
+            }
+            h2 {
+                line-height: $h2-line-height;
+            }
+            h3 {
+                line-height: $h3-line-height;
+            }
+        }
+    }
+
+    aside.main-container {
+        border-top: 0 solid $brand-color;
+
+        figure {
+            figcaption {
+                text-align: right;
+            }
+        }
+    }
+
+}
+
+@include gs-media(l) {
+    header.main-container {
+        .main-title {
+
+        }
+
+        .sub-title {
+
+        }
+    }
+}
+
+
