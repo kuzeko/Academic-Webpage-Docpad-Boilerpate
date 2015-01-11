@@ -11,7 +11,7 @@
                 <h2 class="sub-title">
                     <%- @document.title %>
                 </h2>
-                <% if @document.inSection is "posts": %>
+                <% if @document.inSection is "blog": %>
                 <time datetime="<%= @document.computerDate %>" class="pub-date subhead">
                     <%= @document.humanDate %>
                 </time>

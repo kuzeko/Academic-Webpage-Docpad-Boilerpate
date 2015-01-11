@@ -226,6 +226,10 @@ footer.main-container {
 
     nav.main-container {
         //@include column(9, $gutter_width, 12);
+        //nav.main-container {
+
+        padding-top: 0.5*$gutter_width;
+        padding-bottom: 0.5*$gutter_width;
     }
 
     section.main-container {
