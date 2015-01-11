@@ -404,6 +404,37 @@ section.main-container {
                 padding-left: 0.5em;
             }
         }
+
+        blockquote {
+
+            background: $grey-light;
+            border-left: 0.5*$gutter_width solid $accent-color;
+            margin: 1.5*$base-font-size $base-font-size;
+            padding: $base-font-size 2*$base-font-size;
+            quotes: "\201C""\201D""\2018""\2019";
+
+            &:before {
+                color: $accent-color;
+                content: open-quote;
+                font-size: 2*$h0-font-size;
+                line-height: 0.01*$h0-font-size;
+                margin-right: 0.25*$h3-font-size;
+                vertical-align: -0.2*$h0-font-size;
+            }
+
+            p{
+                display: inline;
+                font-size: $h3-font-size;
+                line-height: $h3-line-height;
+            }
+
+            footer {
+                margin-top:  $h4-margin-top;
+                text-align: right;
+                font-size: $h4-font-size;
+                line-height: $h4-line-height;
+            }
+        }
     }
 }
 
