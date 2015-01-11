@@ -16,6 +16,16 @@ This HTML5 Boilerplate skeleton for DocPad contains layout and structure with ba
 
 ## Getting Started
 
+0. Install some tools following this "all in one videotutorial" for: `Git`, `Node.js`, `SASS/SCSS`, and `Grunt`
+    __You can skip the part about  heroku and Susy__
+
+   -  [Here is the tutorial for Mac](https://www.youtube.com/watch?v=2Pjfs6lxFGo)
+   -  [and here the tutorial for Windows](https://www.youtube.com/watch?v=kXikXodx-y4)
+   
+    For `Node.js` on a Mac, would be better to change owner to `/usr/local` with the following:
+
+            sudo chown -R $USER /usr/local
+
 1. [Install DocPad](https://github.com/bevry/docpad)
 
 2. Clone the project and run the server: open the terminal and run the following commands
