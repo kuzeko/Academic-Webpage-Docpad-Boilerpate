@@ -61,15 +61,15 @@ See `src/static/humans.txt` for a complete colophon.
 ## File Structure
 
     .
-    ├── LICENSE.md              <- your rights on this code
-    ├── README.md              <- This file
-    ├── bin                           <- Script to deploy in production the website
-    ├── .env                         <- Conguration file for the deployment script [TO BE EDITED]
-    ├── docpad.coffee           <- Configuration file [TO BE EDITED]
-    ├── grunt-config.json      
+    ├── LICENSE.md           <- your rights on this code
+    ├── README.md            <- This file
+    ├── bin                  <- Script to deploy in production the website
+    ├── .env                 <- Conguration file for the deployment script [TO BE EDITED]
+    ├── docpad.coffee        <- Configuration file [TO BE EDITED]
+    ├── grunt-config.json
     ├── grunt.js
-    ├── package.json             <- List of things that will be installed automatically
-    └── src                            <- The real content and structure [TO BE EDITED]
+    ├── package.json         <- List of things that will be installed automatically
+    └── src                  <- The real content and structure [TO BE EDITED]
 
 ## License
     
