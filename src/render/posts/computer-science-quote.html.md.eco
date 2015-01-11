@@ -1,0 +1,25 @@
+---
+title: 'Science is to computer science as ...'
+layout: 'article'
+name: 'computer-science-quote'
+
+headerTitle: 'Computer Science is like plumbing'
+menuTitle: 'Quote on CS'
+
+pageType : 'secondary'
+public: true
+
+inSection: 'blog'
+
+date: 2015-01-7
+---
+
+
+<blockquote>
+    <p>Science is to computer science as hydrodynamics is to plumbing.</p>
+    <footer>
+    &mdash; <cite>by Prof. M. Thump</cite>
+    </footer>
+</blockquote>
+
+

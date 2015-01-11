@@ -9,85 +9,78 @@ menuTitle: 'Docpad personal Webpage'
 pageType : 'secondary'
 public: true
 
-inSection: 'posts'
+inSection: 'blog'
 
 date: 2014-12-25
 ---
 
+# How to build you personal Docpad Skeleton
+
 <section class="intro">
-<p class="subhead">Install the theme here</p>
+<p class="subhead">This guide goes further in the technicalities, tries to give you the steps to customize your own Docapd Skeleton, as I did with the [Academic Webpage Boilerpate](https://github.com/kuzeko/Academic-Webpage-Docpad-Boilerpate). If you don't want loose too much time, you'd better off just installing and customizing that one.</p>
 </section>
 
-# Install some tools
-## all in one videotutorial for:
- 1. GIT,
- 2. NODE,
- 3. SASS,
- 4. SUSY,
- 5. GRUNT
+## First: Install some tools
+Follow this "all in one videotutorial" for: `Git`, `Node.js`, `SASS/SCSS`, and `Grunt`.
+__You can skip the part about  heroku and Susy__
 
- __No need for heroku__
+   -  [Here is the tutorial for Mac](https://www.youtube.com/watch?v=2Pjfs6lxFGo)
+   -  [and here the tutorial for Windows](https://www.youtube.com/watch?v=kXikXodx-y4)
 
--  [tutorial for Mac](https://www.youtube.com/watch?v=2Pjfs6lxFGo)
--  [tutorial for Windows](https://www.youtube.com/watch?v=kXikXodx-y4)
+    For `Node.js` on a Mac, would be better to change owner to `/usr/local` with the following:
 
+            sudo chown -R $USER /usr/local
 
-For Node on a Mac better to change owner to `/usr/local` with:
-
-    sudo chown -R $USER /usr/local
-
-as in [point 4.1.3 of this guide](http://bevry.me/learn/node-install)
+    as in [point 4.1.3 of this guide](http://bevry.me/learn/node-install)
 
 
-## Additional [Color utilities](https://github.com/chriseppstein/compass-colors)
-install this SASS plugin, run in your terminal:
+### Additional [Color utilities](https://github.com/chriseppstein/compass-colors)
+If you wish, you can install this `SASS` plugin to add compass and some mixins that can help styling colors, it is not needed, but if you like the ides run in your terminal:
 
     sudo gem install compass-colors
 
-
-# Docpad
+## Docpad
 Install the latest version of docpad, run in your terminal:
 
     npm install -g docpad
 
 
-## Start
+### Start the Project Skeleton
 Create a project folder and run the installer (spoiler: choose option number `2` when asked)
 
-    mkdir my-page
-    cd my-page
+    mkdir my-skeleton
+    cd my-skeleton
     docpad run
 
-Initialize the project with the [HTML5 Boilerplate](http://html5boilerplate.com/) and [Grunt](http://gruntjs.com/)
-i.e., choose option number
-` 2 `
+Initialize the project with the [HTML5 Boilerplate](http://html5boilerplate.com/) and [Grunt](http://gruntjs.com/), i.e., choose option number ` 2 `
 
-## [SASS](https://github.com/docpad/docpad-plugin-sass)
+### Install [SASS](https://github.com/docpad/docpad-plugin-sass) and add it to the package requirements with
 
     docpad install sass
 
-and plugin
-https://github.com/brockfanning/docpad-plugin-moment
+and then the plugin for [`moment.js`](https://github.com/brockfanning/docpad-plugin-moment) that helps handling dates for computers and humans:
 
    docpad install moment
 
 
-### Configure `my-page/docpad.coffee`
+# Hereafter the guide is incomplete and incorrect: work in progress
+
+#### We now change the configuration for docapd `my-skeleton/docpad.coffee`
 
 Just before the section `DocPad Events` you can put the following
 
-    # =================================
-    # Configure Plugins
-    # Should contain the plugin short names on the left,
-    # and the configuration to pass the plugin on the right
+    ## =================================
+    ## Configure Plugins
+    ## Should contain the plugin short names on the left,
+    ## and the configuration to pass the plugin on the right
     plugins:
         livereload:
             enabled: true
 
         sass:
-            # enable compass-colors
+            ## enable compass-colors
             requireLibraries: ['compass-colors']
-            # set correct path for the scss
+            ## set correct path for the scss
             scssPath: '/usr/bin/scss'
             compass: 'true'
 
@@ -97,11 +90,11 @@ Just before the section `DocPad Events` you can put the following
                 {raw: 'date', format: 'YYYY-MM-DD', formatted: 'computerDate'}
             ]
 
-    # =================================
-    # Server Configuration
+    ## =================================
+    ## Server Configuration
 
-    # Port
-    # Use to change the port that DocPad listens to
+    ## Port
+    ## Use to change the port that DocPad listens to
     port: 8080
 
 The `#` will comment out a line.
@@ -109,7 +102,7 @@ Tab indentation __does__ count, the code is just 1 indent inside (use tabs), so 
 
 
 
-## File Structure
+### File Structure
 We put some more structure in  `./src/documents/styles`
 
     ./src
@@ -131,46 +124,46 @@ We put some more structure in  `./src/documents/styles`
 
 
 
-## Change Template Data
+### Change Template Data
 We edit basic informations (global variables)
 
     templateData:
 
-        # Specify some site properties
+        ## Specify some site properties
         site:
-            # The production url of our website         email: 'ml@disi.unitn.eu'
+            ## The production url of our website         email: 'ml@disi.unitn.eu'
             url: "http://website.com"
             email: 'ml@disi.unitn.eu'
 
-            # Here are some old site urls that you would like to redirect from
+            ## Here are some old site urls that you would like to redirect from
             oldUrls: [
                 'www.website.com',
                 'website.herokuapp.com'
             ]
 
-            # The default title of our website
+            ## The default title of our website
             title: "Your Website"
 
-            # The website description (for SEO)
+            ## The website description (for SEO)
             description: """
                 When your website appears in search results in say Google, the text here will be shown underneath your website's title.
                 """
 
-            # The website keywords (for SEO) separated by commas
+            ## The website keywords (for SEO) separated by commas
             keywords: """
                 place, your, website, keywoards, here, keep, them, related, to, the, content, of, your, website
                 """
 
 
 
-## Microformats & Semantics
+### Microformats & Semantics
 
  - [hCard microformat](http://microformats.org/wiki/h-card) & [checking them](http://waterpigs.co.uk/php-mf2/?)
  - [ARIA Roles](http://alistapart.com/article/aria-and-progressive-enhancement/#section2)
  http://24ways.org/2013/coding-towards-accessibility/
 
 
-## Responsive Web Deisgn
+### Responsive Web Deisgn
 - [Google Web Fundamentals](https://developers.google.com/web/fundamentals/)
 - [Media Queries with EM](http://css-tricks.com/zooming-squishes/)
 - [Understanding EM units](http://www.impressivewebs.com/understanding-em-units-css/)
@@ -179,7 +172,7 @@ We edit basic informations (global variables)
 
 
 
-## Veneer
+### Veneer
  - [Responsive Type Scale](http://typecast.com/blog/a-more-modern-scale-for-web-typography)
  - [Background Images](http://subtlepatterns.com/)
  - [Beautiful Type Couples](http://hellohappy.org/beautiful-web-type/)
@@ -188,12 +181,12 @@ We edit basic informations (global variables)
 
 
 
-## What is Grunt and more details about it?
+### What is Grunt and more details about it?
 http://www.integralist.co.uk/posts/grunt-boilerplate/
 http://24ways.org/2013/grunt-is-not-weird-and-hard/
 http://css-tricks.com/video-screencasts/130-first-moments-grunt/
 
-## SASS
+### SASS
 - [More on sass](http://alistapart.com/article/why-sass)
 
 
