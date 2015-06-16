@@ -10,7 +10,7 @@ pageType : 'homepage'
 public: true
 orderValue : 1
 ---
-
+<!-- <%= @moment().format('MMMM, YYYY') %> -->
 <section class="main-container">
 
     <article class="container main-content" role="main">

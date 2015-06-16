@@ -13,7 +13,7 @@ inSection: 'blog'
 
 date: 2015-01-01
 ---
-
+<!-- <%= @moment().format('MMMM, YYYY') %> -->
 
 # My Academic Webpage skeleton for [DocPad](https://github.com/bevry/docpad)
 

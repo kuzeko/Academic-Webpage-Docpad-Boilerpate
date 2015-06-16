@@ -13,6 +13,7 @@ inSection: 'blog'
 
 date: 2015-01-7
 ---
+<!-- <%= @moment().format('MMMM, YYYY') %> -->
 
 
 <blockquote>

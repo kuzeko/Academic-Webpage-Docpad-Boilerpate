@@ -10,6 +10,8 @@ pageType : 'secondary'
 public: true
 orderValue : 3
 ---
+<!-- <%= @moment().format('MMMM, YYYY') %> -->
+
 <section class="main-container">
 <article class="container main-content" id="content" role="main">
 <section class="primary-content">

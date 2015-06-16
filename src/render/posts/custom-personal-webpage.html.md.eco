@@ -13,6 +13,7 @@ inSection: 'blog'
 
 date: 2014-12-25
 ---
+<!-- <%= @moment().format('MMMM, YYYY') %> -->
 
 # How to build you personal Docpad Skeleton
 
