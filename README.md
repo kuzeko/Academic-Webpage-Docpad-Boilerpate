@@ -1,8 +1,13 @@
 # My Academic Webpage skeleton for [DocPad](https://github.com/bevry/docpad)
 
+
+## NOT MANTAINED
+
 >   Bare essentials for building a modern website with best practices
 
 This is a fork of the skeleton [HTML5 Boilerplate with Grunt for Docpad](https://github.com/lukekarrys/html5-boilerplate.docpad) by [lukekarrys](https://github.com/lukekarrys).
+
+
 
 
 ## Why the fork?
